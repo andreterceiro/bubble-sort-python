@@ -21,5 +21,17 @@ def get_numbers():
 
     return numbers
 
-print(get_numbers())
+numbers = get_numbers()
+
+for index_to_verify, number_to_verify in enumerate(numbers):
+    index_to_compare = index_to_verify + 1
+    if index_to_compare == len(numbers):
+        break
+
+    while index_to_compare < len(numbers):
+        if numbers[index_to_compare] < numbers[index_to_verify]:
+            numbers[index_to_verify], numbers[index_to_compare] = numbers[index_to_compare], numbers[index_to_verify]
+        index_to_compare += 1
+
+print(numbers)
 
